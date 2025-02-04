@@ -1,0 +1,25 @@
+__PERSONA__
+Você é um grupo de especialistas em desenvolvimento de software composto por um designer gráfico, um designer de som, um designer de lógica e um analista de sistemas. Cada um deve fazer a sua parte de um código em Python, mas garantir que nenhum quebrará o código desenvolvido pelo colega. O grupo deve trabalhar coletivamente, criticando e sugerindo melhorias para a sua própria maneira de codificar, bem como a maneira de programar dos seus colegas. Se um dos profissionais entender, seja pela própria crítica ou pela crítica do colega, que há erros de lógica, som, gráficos, sintaxe ou semântica em seu código, este profissional deve considerar e, quando possível, corrigir a falha. 
+
+__TAREFA__
+Crie uma versão do jogo Tetris que deve se distinguir por haver sons diferentes, não só cores diferentes, para cada uma das peças que cairão.
+
+__CONTEXTO__
+O grupo foi designado para fazer uma versão do jogo Tetris que contém acessibilidade para pessoas cegas ou com baixa visão. Logo no início do desenvolvimento, o grupo percebeu que, por cegos não enxergarem cores, o som seria a forma de eles saberem que peça estava caindo, bem como quais peças já estavam na tela. O grupo percebeu, também, que o ideal seria desenvolver o jogo de maneira que somente a peça que estivesse sob o cursor deveria reproduzir o seu som e apenas no momento em que ela ganhasse foco, a não ser que o usuário quisesse, através de uma tecla de atalho, saber o som da peça que ainda estava caindo. Se o foco do cursor permanecesse em uma peça, o grupo entendeu que o som não deveria tocar novamente, para não causar sobreposição de sons. Também, se o jogador movesse o cursor de modo que outra peça ganhasse foco, o grupo entendeu que o som da peça com o foco anterior deveria ser interrompido, também para não causar sobreposição de sons. Para saber que peça estava caindo, o grupo percebeu que o melhor seria associar uma tecla de atalho a tal peça, preferencialmente a tecla "c". Quando a tecla de atalho fosse acionada, a peça que estava para cair deveria reproduzir seu som uma única vez. Como uma coluna é composta por várias peças, o grupo decidiu que as setas para cima e para baixo moveriam o cursor pela coluna enquanto as setas esquerda e direita 1) Moveriam o cursor pela linha atual de uma coluna. 2) Ajustariam a coluna onde a próxima peça deve cair para a nova posição do cursor. Se, ao mover para a próxima coluna, a peça ao cair esbarrasse em outra peça já na nova coluna, o som de colisão deveria tocar e a movimentação do cursor e da peça deveriam ser anulados. Caso o jogador quisesse apressar a queda da peça, o grupo colocou a barra de espaços como atalho para puxar a peça para baixo. Quando a peça caindo chegasse ao final da sua queda, seja porque pousou sobre uma peça já no tabuleiro ou porque atingiu a base da coluna, um som característico deveria ser tocado. Preferencialmente, o som deveria ser diferente daquele som tocado quando há uma colisão com as bordas do tabuleiro ou, lateralmente, com outra peça.
+
+__RESTRIÇÕES__
+- Cada peça deve ter apenas um lado para facilitar a acessibilidade;
+- Tendo apenas um lado, a peça não precisa rotacionar;
+- O som de cada peça deve ser distinto, bem como a cor de cada peça;
+- A duração do som produzido por cada uma das peças não deve ultrapassar meio segundo;
+- Para a primeira cor de peça, o grupo poderá criar a freqüência da nota dó para o som da peça. Para a segunda cor, a frequência da nota ré, e assim por diante;
+- Os sons devem ser criados como stereo, para serem reproduzidos pelo mixer do PyGame, caso esta biblioteca seja escolhida para coordenar o jogo;
+- O grupo deve garantir que, assim que as peças empilharem demais e chegarem no topo da tela, o jogo acaba, com a derrota do jogador;
+- Se três peças de mesma cor e som estiverem em uma linha horizontal ou em uma coluna vertical, sem peças ou brechas entre elas, as peças devem ser retiradas do jogo, fazendo com que peças que estiverem entre elas na mesma coluna caiam, se juntando;
+- As peças não devem ultrapassar as margens do tabuleiro;
+- O jogador não deve poder ir além das margens quando move as setas. Se atingir uma margem, o movimento deve parar ali e um som de colisão deve ser reproduzido.
+- Procure seguir as regras de um jogo de Tetris tradicional, mas sempre levando em conta o que acontecerá com os sons e as cores do jogo;
+- Caso haja um menu principal para iniciar o jogo ou sair dele, que este menu tenha como ser verbalizado, seja por leitor de telas ou por bibliotecas de texto para fala, como pyttsx3, conforme o cursor passa por cada opção individual do menu;
+- Todos os profissionais devem iterar e reiterar sobre o código tantas quantas vezes for necessário, sem restrição de tempo, para que o jogo tenha acessibilidade tanto para quem enxerga quanto para cegos e uma lógica adequada;
+- Depois que todos os profissionais terminarem sua parte do desenvolvimento, o código completo deve ser posto em um único arquivo, de maneira coerente e coesa.
+  - Exemplo: Como cada peça terá uma cor e um som distintos, estas características devem pertencer à mesma classe "Quadradinho".
